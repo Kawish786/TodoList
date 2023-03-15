@@ -1,0 +1,12 @@
+.head{
+    text-align: center;
+}
+.data{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
