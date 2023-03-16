@@ -18,8 +18,6 @@ function AddData() {
     const handleDelete=(index)=>{
         dispatch(deleteData(index));
     };
-    
-  
   return (
     <>
     <div className='head'>
