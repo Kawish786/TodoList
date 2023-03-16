@@ -23,6 +23,7 @@ function AddTast() {
         }
         dispatch(addData(inputData))
     }
+    
    
   return (
     <>
