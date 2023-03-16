@@ -11,11 +11,11 @@ const UserReducer =(state={name:"kawish",user:[]},action)=>{
                 return{...state,user:newArr}
 
             }
-        // case 'DELETE_DATA':
-        //         return {
-        //           ...state,
-        //           user: state.user.filter((item) => item.index !== action.payload)
-        //         }    
+        case 'DELETE_DATA':
+                return {
+                  ...state,
+                  user: state.user.filter((i) => i.task !== action.payload)
+                }    
         default:return state
     }
 

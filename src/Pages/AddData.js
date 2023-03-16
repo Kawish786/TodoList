@@ -1,18 +1,25 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../Pages/AddData.css'
-import {  useSelector } from 'react-redux'
+import {  useSelector , useDispatch} from 'react-redux'
+import { deleteData } from '../REDUX/Action'
 
 
 
 function AddData() {
     const nav=useNavigate()
-    const state=useSelector((data)=>data)
+     const state = useSelector((data) => data);
+     const dispatch = useDispatch();
+     
  
     const handleTask=()=>{
          nav('/')
     }
-   
+    const handleDelete=(index)=>{
+        dispatch(deleteData(index));
+    };
+    
+  
   return (
     <>
     <div className='head'>
@@ -39,7 +46,7 @@ function AddData() {
                         <td>{i.timef}</td>
                         <td>{i.timet}</td>
                         <td>{i.date}</td>
-                        <td><button type="button" className="btn btn-outline-danger">Delete</button></td>
+                        <td><button onClick={()=>handleDelete(i.task)} type="button" className="btn btn-outline-danger">Delete</button></td>
                         </tr>
                     ))
                 }

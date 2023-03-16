@@ -6,5 +6,10 @@ export function addData(payload){
     }
 }
 
-
+export const deleteData = (index) => {
+    return {
+      type: 'DELETE_DATA',
+      payload: index,
+    };
+  };
   
