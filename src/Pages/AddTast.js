@@ -32,6 +32,7 @@ function AddTast() {
     
       const [errorMessage, setErrorMessage] = useState('');
       const [timeerror, setTimeError] = useState('');
+      const [equaltimeerror, setEqualTimeError] = useState('');
 
     
       const nav = useNavigate();
@@ -49,6 +50,9 @@ function AddTast() {
         }
         else if(timet<timef){
             setTimeError('Time-To cannot be less than Time-From');
+        } 
+        else if(timet===timef){
+            setEqualTimeError('Time-To cannot be equal Time-From');
         } 
         else {
           nav('/data');
@@ -84,6 +88,7 @@ function AddTast() {
     </div>
     {errorMessage && <p style={{color:'red',textAlign:'center'}} className="error-message">{errorMessage}</p>}
     {timeerror && <p style={{color:'red',textAlign:'center'}} className="error-message">{timeerror}</p>}
+    {equaltimeerror && <p style={{color:'red',textAlign:'center'}} className="error-message">{equaltimeerror}</p>}
     <div className='button'>
     <button type="button" onClick={handleClick} className="btn btn-outline-dark btn-lg">Add</button>
     </div>
